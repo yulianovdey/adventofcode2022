@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs';
-import { resolve, dirname } from 'path';
+import { resolve } from 'path';
 
-const lines = readFileSync(resolve(dirname(__filename), 'input.txt'), 'utf8').trim();
+const lines = readFileSync(resolve(process.env['PWD'] as string, 'src/d1/p1/input.txt'), 'utf8').trim();
 
 let max = 0;
 let currentTotal = 0;
