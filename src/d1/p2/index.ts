@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 
-const lines = readFileSync(resolve(process.env['PWD'] as string, 'src/d1/p2/input.txt'), 'utf8').trim();
+const lines = readFileSync(resolve(process.env['PWD'] as string, 'src/d1/input.txt'), 'utf8').trim();
 
 const topThree = [0, 0, 0];
 
