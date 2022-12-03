@@ -39,3 +39,10 @@ export const OutcomeToScore = {
   [Outcome.Draw]: 3,
   [Outcome.Win]: 6,
 };
+
+// Part Two Only
+export const LetterToOutcome = {
+  [Code.X]: Outcome.Loss,
+  [Code.Y]: Outcome.Draw,
+  [Code.Z]: Outcome.Win,
+}
