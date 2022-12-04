@@ -1,4 +1,4 @@
-import { Shape, Outcome, LetterToShape, Code, OutcomeToScore, ShapeToScore } from '../types';
+import { Shape, Outcome, LetterToShape, Code, OutcomeToScore, ShapeToScore } from './types';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 
