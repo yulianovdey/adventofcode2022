@@ -41,7 +41,9 @@ export const OutcomeToScore = {
 };
 
 // Part Two Only
-export const LetterToOutcome = {
+export type OutcomeCode = Exclude<Code, Code.A | Code.B | Code.C>;
+
+export const LetterToOutcome: { [k in OutcomeCode]: Outcome } = {
   [Code.X]: Outcome.Loss,
   [Code.Y]: Outcome.Draw,
   [Code.Z]: Outcome.Win,

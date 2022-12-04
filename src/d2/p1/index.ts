@@ -34,7 +34,7 @@ let totalScore = 0;
 for (const line of lines.split('\n')) {
   const [oppPlayed, , youPlayed] = line.split('');
 
-  totalScore += calcRoundScore(oppPlayed, youPlayed);
+  totalScore += calcRoundScore(oppPlayed as Code, youPlayed as Code);
 }
 
 console.log(totalScore);

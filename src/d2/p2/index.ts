@@ -1,4 +1,4 @@
-import { Shape, Outcome, OutcomeToScore, LetterToShape, ShapeToScore, LetterToOutcome, Code } from '../types';
+import { Shape, Outcome, OutcomeToScore, LetterToShape, ShapeToScore, LetterToOutcome, Code, OutcomeCode } from '../types';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 
@@ -19,10 +19,11 @@ function calcShape(oppPlayed: Shape, desiredOutcome: Outcome): Shape {
     return winConditions[oppPlayed];
   }
 
-  return Object.keys(winConditions).find((k: Shape) => winConditions[k] === oppPlayed);
+  return (Object.keys(winConditions) as Shape[])
+    .find((k) => winConditions[k as Shape] === oppPlayed)!;
 }
 
-function calcRoundScore(oppPlayed: Code, desiredOutcomeCode: Code): number {
+function calcRoundScore(oppPlayed: Code, desiredOutcomeCode: OutcomeCode): number {
   const oppShape = LetterToShape[oppPlayed];
   const desiredOutcome = LetterToOutcome[desiredOutcomeCode];
 
@@ -35,7 +36,7 @@ let totalScore = 0;
 for (const line of lines.split('\n')) {
   const [oppPlayed, , desiredOutcome] = line.split('');
 
-  totalScore += calcRoundScore(oppPlayed, desiredOutcome);
+  totalScore += calcRoundScore(oppPlayed as Code, desiredOutcome as OutcomeCode);
 }
 
 console.log(totalScore);
