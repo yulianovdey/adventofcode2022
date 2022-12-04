@@ -12,13 +12,12 @@ for (const line of lines) {
   r2Max = parseInt(r2Max);
 
   if (
-    (r1Min <= r2Min && r1Max >= r2Min)
-    || (r2Min <= r1Min && r2Max >= r1Min)
-    || (r1Min <= r2Max && r1Max >= r2Min)
-    || (r2Min <= r1Max && r2Max >= r1Min)
-  ) {
-    count += 1;
+    r1Max < r2Min
+    || r1Min > r2Max
+    ) {
+      continue;
   }
+  count += 1;
 }
 
 console.log(count);
