@@ -16,7 +16,7 @@ for (const { n, from, to } of parseOpLines()) {
 let crates = [];
 
 for (const stack of Object.values(stacks)) {
-  crates.push(stack.pop());
+  crates.push(stack.peak());
 }
 
 console.log(crates.join(''));

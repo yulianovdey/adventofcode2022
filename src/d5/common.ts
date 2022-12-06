@@ -16,10 +16,8 @@ export class Stack<T> {
     return this.stack.pop();
   }
 
-  printStack() {
-    for (let i = this.stack.length - 1; i >=0; i--) {
-      console.log(`[${this.stack[i]}]`);
-    }
+  peak() {
+    return this.stack[this.stack.length - 1];
   }
 }
 
