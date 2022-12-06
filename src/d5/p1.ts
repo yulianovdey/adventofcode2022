@@ -2,7 +2,7 @@ import { inputToStacks, parseOpLines } from './common';
 
 const stacks = inputToStacks();
 
-for (const { n, from, to} of parseOpLines()) {
+for (const { n, from, to } of parseOpLines()) {
   for (let i = 0; i < n; i++) {
     stacks[to].push(stacks[from].pop());
   }
