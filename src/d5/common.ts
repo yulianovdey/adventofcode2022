@@ -1,20 +1,10 @@
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
-import { Stack } from '../util';
+import { Stack, linesToMatrix } from '../util';
 
 export const STACK_INDICES_LINE = 8;
 
 export const lines = readFileSync(resolve(process.env['PWD'] as string, 'src/d5/input.txt'), 'utf8').split('\n');
-
-function linesToMatrix(lines: string[]): string[][] {
-  const matrix = [];
-
-  for (const line of lines) {
-    matrix.push(line.split(''));
-  }
-
-  return matrix;
-}
 
 export function inputToStacks(): { [k: number]: Stack<string>} {
   const stackMatrix = linesToMatrix(lines.slice(0, STACK_INDICES_LINE));

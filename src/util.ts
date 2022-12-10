@@ -15,11 +15,25 @@ export function unique<T>(arr: T[]): T[] {
   return results;
 }
 
+export function parseLines(dayNum) {
+  return readFileSync(resolve(process.env['PWD'] as string, `src/d${dayNum}/input.txt`), 'utf8').trim().split('\n');
+}
+
+export function linesToMatrix(lines: string[]): string[][] {
+  const matrix = [];
+
+  for (const line of lines) {
+    matrix.push(line.split(''));
+  }
+
+  return matrix;
+}
+
 export class LineIterator {
   private current = -1;
 
   constructor(dayNum) {
-    this.lines = readFileSync(resolve(process.env['PWD'] as string, `src/d${dayNum}/input.txt`), 'utf8').trim().split('\n');
+    this.lines = parseLines(dayNum);
   }
 
   next() {
