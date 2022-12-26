@@ -11,7 +11,6 @@ for (let cycle = 1; cycle < screen.length; cycle++) {
   const spriteMid = 40 * Math.floor((cycle - 1) / 40) + x;
   const spritePositions = [spriteMid - 1, spriteMid, spriteMid + 1];
   screen[cycle - 1] = spritePositions.includes(cycle - 1) ? 1 : 0;
-  console.log(cycle, spritePositions, x, screen[cycle - 1]);
   if (queue.length) {
     x += queue.pop();
     continue;
