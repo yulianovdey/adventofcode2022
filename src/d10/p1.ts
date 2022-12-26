@@ -23,4 +23,6 @@ while (lines.hasNext() || queue.length) {
   }
 }
 
+const screen = new Array(6).fill(undefined).map(() => new Array(40).fill(undefined));
+
 console.log(p1);
